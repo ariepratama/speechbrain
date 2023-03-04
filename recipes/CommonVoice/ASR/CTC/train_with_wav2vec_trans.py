@@ -54,7 +54,7 @@ class ASR(sb.core.Brain):
         
         # Forward pass
         feats = self.modules.wav2vec2(wavs)
-        feats = self.hparams.enc_cnn(feats)
+        feats = self.modules.enc_cnn(feats)
         
         # encoder must be a variant of Transformer
         enc_out, pred = self.modules.enc(
